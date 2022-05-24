@@ -1,21 +1,17 @@
 import { useState } from "react";
 import islands from "../data/islands";
 // import Island from "./Island.js";
-export default function IslandForm({ island }) {
+export default function IslandForm({ island, incVisitors }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  // let selectedisland = islands.filter(
-  //   (item) => item.name.toLowerCase() == island.name
-  // );
-  // const [visitors, setVisitors] = useState(selectedisland.visitors);
+
   const confirmbooking = () => {
     if (
       window.confirm(
         `Are you sure you want to book to ${island.name} with the Name: ${name}, phone: ${phone}`
       )
     ) {
-      // setVisitors(visitors + 1);
-
+      incVisitors(island.id);
       alert("increment visitors");
     }
   };
