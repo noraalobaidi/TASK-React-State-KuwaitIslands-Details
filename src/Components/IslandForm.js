@@ -12,7 +12,6 @@ export default function IslandForm({ island, incVisitors }) {
       )
     ) {
       incVisitors(island.id);
-      alert("increment visitors");
     }
   };
   return (
